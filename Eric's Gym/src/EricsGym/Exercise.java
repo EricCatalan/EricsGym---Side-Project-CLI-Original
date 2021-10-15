@@ -5,6 +5,7 @@ public class Exercise {
     private String name;
     private String activity;
     private boolean isOn =false;
+    private String walkUp = "You walked up to " + this.getName() ;
     //Constructor
     public Exercise(String name, String activity){
         this.name=name;
@@ -16,6 +17,10 @@ public class Exercise {
     public String getActivity() {
         return activity;}
     public void on(boolean isOn){this.isOn=isOn;}
+
+    public String walkUp(){
+        return walkUp;
+    }
 
 }
 
