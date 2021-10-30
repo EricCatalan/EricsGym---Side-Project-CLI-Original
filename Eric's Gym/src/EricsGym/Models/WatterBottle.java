@@ -18,4 +18,8 @@ public class WatterBottle {
     public int getWaterLevel() {
         return waterLevel;
     }
+
+    public String getWaterLevelString(){
+        return ( "Your water bottle is " + getWaterLevel() + "% full.");
+    }
 }

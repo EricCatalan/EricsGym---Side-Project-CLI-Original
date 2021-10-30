@@ -2,7 +2,7 @@ package EricsGym.Models;
 
 import EricsGym.EricsGym;
 
-public class Exercise {
+public class Exercise implements Workout {
     //Instance Variables
     private String name;
     private String activity;
@@ -25,7 +25,8 @@ public class Exercise {
         return walkUp;
     }
 
-
-
+    @Override
+    public void workout() {
+    }
 }
 

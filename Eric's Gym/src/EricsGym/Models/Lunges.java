@@ -1,33 +1,32 @@
 package EricsGym.Models;
 
-public class Squats extends Exercise{
-
+public class Lunges extends Exercise{
     private double  amountPerSet = 0;
     private double amountOfSets =0;
     private double minutes = 0;
     private String walkUp = "You find an isolated part of the gym where there is no one around. "+ '\n';
     private final double AVERAGE_PERSON_WEIGHT_IN_KG = (181/2.2);
-    private final double MET_VALUE_OF_SQUATS = 5.5;
+    private final double MET_VALUE_OF_LUNGES = 4;
     private double caloriesBurned = 0;
 
-//Calories burned formula pulled from here
-//https://burned-calories.com/sport/squats
+    //Formula for calories
+    //https://burned-calories.com/sport/lunges
 
     @Override
     public void workout() {
-        caloriesBurned = (AVERAGE_PERSON_WEIGHT_IN_KG * MET_VALUE_OF_SQUATS *0.0175 * this.minutes);
+        caloriesBurned = (AVERAGE_PERSON_WEIGHT_IN_KG * MET_VALUE_OF_LUNGES * .0175 * this.minutes);
     }
 
-    public Squats() {
-        super("Squats", "Lower Body");
+    public Lunges() {
+        super("Lunges", "Lower Body");
     }
 
-    public double getCaloriesBurned() {
-        return caloriesBurned;
+    public void setAmountPerSet(double amountPerSet) {
+        this.amountPerSet = amountPerSet;
     }
 
-    public double getMinutes() {
-        return minutes;
+    public void setAmountOfSets(double amountOfSets) {
+        this.amountOfSets = amountOfSets;
     }
 
     public void setMinutes(double minutes) {
@@ -38,22 +37,21 @@ public class Squats extends Exercise{
         return amountPerSet;
     }
 
-    public String getWalkUp() {
-        return walkUp;
-    }
-
-    public void setAmountPerSet(double amountPerSet) {
-        this.amountPerSet = amountPerSet;
-    }
-
     public double getAmountOfSets() {
         return amountOfSets;
     }
 
-    public void setAmountOfSets(double amountOfSets) {
-        this.amountOfSets = amountOfSets;
+    public double getMinutes() {
+        return minutes;
     }
 
+    public String getWalkUp() {
+        return walkUp;
+    }
+
+    public double getCaloriesBurned() {
+        return caloriesBurned;
+    }
     public boolean setAPSValid(double amountPerSet){
         boolean validAmount = false;
         if (amountPerSet >0){
@@ -87,7 +85,6 @@ public class Squats extends Exercise{
         return "Please enter the amount of minutes you are going to be doing squats for: ";
     }
     public String exit(){
-        return "You start shaking out your legs... they are burning. What would you like to do next? ";
+        return "You walk off the tingling in your quads. What would you like to do next? ";
     }
-
 }

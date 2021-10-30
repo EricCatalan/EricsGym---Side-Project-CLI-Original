@@ -5,9 +5,23 @@ public class PushUps  extends Exercise{
     private double amountOfSets =0;
     private String walkUp = "You walk over to the corner of the gym where there are mats on the floor. "+ '\n';
     public PushUps() {
-        super("PushUp", "PushUps");
+        super("PushUps", "Core");
+    }
+    private final double AVERAGE_CALORIE_BURNED_PER_PUSHUP = .45; // Used mean of .3 and .6
+    private double caloriesBurned = 0;
+
+    //Used this for calories
+    //https://burned-calories.com/sport/push-ups
+
+
+    public double getCaloriesBurned() {
+        return caloriesBurned;
     }
 
+    @Override
+    public void workout() {
+        caloriesBurned = (this.amountOfSets * this.amountPerSet) * AVERAGE_CALORIE_BURNED_PER_PUSHUP;
+    }
 
     public double getAmountPerSet() {
         return amountPerSet;

@@ -1,11 +1,39 @@
 package EricsGym.Models;
 
 public class Treadmill extends Exercise{
+    // https://www.livestrong.com/article/34973-calculate-treadmill-calories/
+    //Formulas from here
+
     //Instance Variables
+
 
     private double speed;
     private String walkUp = "You just walked up to the treadmill. " + '\n';
     private double minutes=0;
+    private final double AVERAGE_PERSON_WEIGHT_IN_KG = (181/2.2);
+    private final double MPH_TO_METERS = 26.8;
+    private double caloriesBurned = 0;
+    private final double STANDARD_GRADE = .01;
+    private double oxygenUsed = 0;
+    private double caloriePerMinute = 0;
+
+    public double getCaloriesBurned() {
+        return caloriesBurned;
+    }
+    @Override
+    public void workout(){
+        //Walking Speed
+        if(this.speed <= 3.7){
+            oxygenUsed = (0.1 * (this.speed * MPH_TO_METERS)) + (1.8 * (this.speed * MPH_TO_METERS) * STANDARD_GRADE) + 3.5;
+        }else{
+            oxygenUsed = (0.2 * (this.speed * MPH_TO_METERS)) + (.9 * (this.speed * MPH_TO_METERS) * STANDARD_GRADE) + 3.5;
+        }
+        caloriePerMinute = ((oxygenUsed * AVERAGE_PERSON_WEIGHT_IN_KG)/ 200);
+        caloriesBurned = caloriePerMinute * this.minutes;
+
+    }
+
+
     //Getters
 
     public double getMinutes() {
@@ -30,7 +58,7 @@ public class Treadmill extends Exercise{
 
     //Constructor
     public Treadmill() {
-        super("Treadmill", "Running");
+        super("Treadmill", "Lower Body");
     }
 
     @Override
