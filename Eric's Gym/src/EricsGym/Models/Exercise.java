@@ -1,11 +1,14 @@
-package EricsGym;
+package EricsGym.Models;
+
+import EricsGym.EricsGym;
 
 public class Exercise {
     //Instance Variables
     private String name;
     private String activity;
     private boolean isOn =false;
-    private String walkUp = "You walked up to " + this.getName() ;
+    private String walkUp;
+    private Menu menu;
     //Constructor
     public Exercise(String name, String activity){
         this.name=name;
@@ -21,6 +24,8 @@ public class Exercise {
     public String walkUp(){
         return walkUp;
     }
+
+
 
 }
 

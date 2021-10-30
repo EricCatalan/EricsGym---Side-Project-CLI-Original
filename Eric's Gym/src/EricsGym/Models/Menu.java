@@ -1,4 +1,6 @@
-package EricsGym;
+package EricsGym.Models;
+
+import EricsGym.EricsGym;
 
 import java.io.InputStream;
 import java.io.OutputStream;

@@ -1,4 +1,6 @@
-package EricsGym;
+package EricsGym.Models;
+
+import EricsGym.EricsGym;
 
 public class WatterBottle {
     int waterLevel = 0;

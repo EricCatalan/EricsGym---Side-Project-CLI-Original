@@ -34,7 +34,7 @@
       <module name="Eric's Gym" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="EricsGym.*" />
+          <option name="PATTERN" value="EricsGym.Models.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
